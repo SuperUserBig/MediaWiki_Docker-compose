@@ -1,0 +1,11 @@
+apt-get install docker-compose docker-engine
+
+iptables-save >> /etc/sysconfig/iptables
+
+docker compose -f wiki.yml up -d
+
+Хост базы данных - db://localhost
+
+scp sshuser@192.168.200.10:/home/user/Загрузки/* /home/user
+
+docker compose -f wiki.yml restart
