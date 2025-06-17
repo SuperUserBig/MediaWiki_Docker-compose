@@ -1,0 +1,27 @@
+services:
+  wiki:
+    images: mediawiki
+	restart: always
+	volumes:
+	  - /var/www/html/images
+	  #- ./LocalSettings.php:/var/www/html/LocalSettings.php
+	ports:
+	  - "8080:80"
+	depends_on:
+	  - db
+
+
+
+	db:
+	  image: mysql
+	  restart: always
+	  environment:
+	    MYSQL_ROOT_PASSWORD: 'WikiP@ssw0rd'
+		MYSQL_DATABASE: 'mediawiki'
+		MYSQL_USER: 'wiki'
+		MYSQL_PASSWORD: 'WikiP@ssw0rd'
+	  volumes:
+	    - dbvolume:/var/lib/mysql
+
+volumes:
+  dbvolume:
