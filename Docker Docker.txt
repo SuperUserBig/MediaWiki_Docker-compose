@@ -1,5 +1,5 @@
 mdadm --create --level=5 --raid-devices=3 /dev/md/md0 /dev/sdb /dev/sdc /dev/sdd 
-mkfs –type ext4 /dev/md/md0 
+mkfs --type ext4 /dev/md/md0 
 nano /etc/fstab	/dev/md/md0 	
 /raid5 	ext4 	defaults 	0	0
 systemctl daemon-reload 	
