@@ -4,3 +4,8 @@ nano /etc/fstab	/dev/md/md0
 /raid5 	ext4 	defaults 	0	0
 systemctl daemon-reload 	
 lsblk
+
+
+
+task-samba-dc
+samba-tool domain provision
